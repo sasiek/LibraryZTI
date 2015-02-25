@@ -21,4 +21,30 @@ angular.module("library", ["firebase", "ui.router"])
   $urlRouterProvider.otherwise('/books');
 })
     
-   
+    .factory('LibraryService', function($firebase, FIREBASE_URL){
+        var ref = new Firebase(FIREBASE_URL + "/categories");
+        var sync = $firebase(ref);
+        var booksCategories = sync.$asArray()
+        
+        var getBooksCategories = function() {
+            return booksCategories;
+        };
+        
+        var addBookCategory = function(category) {
+            booksCategories.$add(category);
+        }
+        
+        var removeBookCategory = function(id) {
+            booksCategories.$remove(id);
+        }
+        
+        var updateBookCategory = function(id) {
+            booksCategories.$save(id);
+        }
+        return {
+            getBooksCategories: getBooksCategories,
+            addBookCategory: addBookCategory,
+            removeBookCategory: removeBookCategory,
+            updateBookCategory: updateBookCategory
+        }
+    })
