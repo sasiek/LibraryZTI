@@ -1,0 +1,22 @@
+#main_container {
+	min-height: 1024px;
+	width:100%;
+}
+
+#left_panel {
+	height: 100%;
+	width: 30%;
+}
+
+#header {
+	height:120px;
+	width: 100%;
+	background-image: url("../img/header.png");
+	background-size: 1680px 120px;
+}
+
+#center_panel {
+	min-height: 1024px;
+	width: 100%;
+	background-image: url("../img/body.png");
+}

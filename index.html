@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library</title>
+  	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script type="text/javascript" src="bower_components/firebase/firebase.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="js/library.js"></script>  
+    
+    <link rel="stylesheet" href="css/library.css">
+</head>
+<body ng-app="library">
+
+    <div id="main_container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a class="navbar-brand" href="#">
+                <img alt="We Love Books" src="">
+                </a>
+            </li>
+            <li><a ui-sref="books">Edit Books List</a></li>            
+            <li><a ui-sref="category">Edit Category </a></li>
+          </ul>
+      </div>
+    </nav>
+        <div id="center_panel" style="padding-top: 100px;">
+            <div ui-view></div>
+        </div>
+        
+    </div>
+
+</body>
+</html>
